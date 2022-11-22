@@ -81,7 +81,7 @@ function HomePage() {
     service.getAllVideos().then((dados) => {
       const novasPlaylists = { ...playlists };
       dados.data.forEach((video) => {
-        novasPlaylists[video.playlist].push(video);
+        novasPlaylists[video.playlist]?.push(video);
       });
       setPlaylists(novasPlaylists);
     });
